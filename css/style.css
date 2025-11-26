@@ -272,4 +272,47 @@ a:hover {
     .footer-col {
         width: 100%;
     }
+}/* === FOOTER SOSIAL LINK STYLES (ICON STYLES) === */
+
+.footer-col.social-links a {
+    /* Linklər yan-yana olsun və ikonla yazı bir yerdə düzülsün */
+    display: flex; 
+    align-items: center;
+    margin-bottom: 15px; /* Aralarındakı məsafə */
+    width: 100%;
+}
+
+.footer-col.social-links a i {
+    /* İkonun özü (Font Awesome) */
+    font-size: 1.8em; /* İkon ölçüsü (fa-2x-ə bənzər) */
+    margin-right: 10px; /* İkon ilə yazı arasındakı məsafə */
+}
+
+/* İkonun altında görünən link yazısını gizlətmək və ya stil vermək */
+.footer-col.social-links a .icon-label {
+    display: inline-block;
+    font-size: 1em;
+}
+
+/* GitHub üçün xüsusi rəng */
+.fa-github {
+    color: #f7f7f7; /* İkonun default rəngi */
+    transition: color 0.3s;
+}
+
+.footer-col.social-links a:hover .fa-github {
+    color: #181717; /* Hover zamanı qara (GitHub rəngi) */
+    background-color: white; /* Arxa fon əlavə etdim */
+    border-radius: 50%;
+    padding: 2px;
+}
+
+/* Codecademy/Təhsil İkonu üçün xüsusi rəng */
+.fa-graduation-cap {
+    color: #f7f7f7;
+    transition: color 0.3s;
+}
+
+.footer-col.social-links a:hover .fa-graduation-cap {
+    color: var(--accent-color); /* Hover zamanı vurğu rəngi */
 }
