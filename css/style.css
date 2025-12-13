@@ -115,7 +115,7 @@ a:hover {
     justify-content: center;
 }
 
-/* Şəxsi şəkil yerinə yer tutucu stilizasiyası */
+/* Şəxsi şəkil yerinə yer tutucu stilizasiyası (Bu hissə artıq lazım deyil, lakin saxlanılır) */
 .hero-image .image-placeholder {
     width: 100%;
     height: 100%;
@@ -138,6 +138,26 @@ a:hover {
 .hero-image .image-placeholder p {
     font-size: 0.8em;
 }
+
+/* === CORRECTED: PROFILE PICTURE STYLING === */
+.hero-profile-pic {
+    /* 1. Size control: Make the image large and square */
+    width: 100%; /* Take up the full width of the hero-image container */
+    max-width: 300px; /* Optional: Set a maximum size for huge screens */
+    height: auto; 
+    aspect-ratio: 1 / 1; /* Ensures it is always square */
+    
+    /* 2. Shape: Turn it into a circle */
+    border-radius: 50%;
+    
+    /* 3. Fit: Ensure the image content looks good */
+    object-fit: cover;
+    
+    /* 4. Optional: Add a stylish border and shadow */
+    border: 5px solid var(--accent-color); /* Uses your orange accent color */
+    box-shadow: 0 10px 20px rgba(0, 76, 153, 0.4); /* Shadow using your primary blue color */
+}
+/* === END OF NEW STYLES === */
 
 
 /* === ABOUT & PROJECT PAGE CONTENT STYLES === */
@@ -264,6 +284,11 @@ a:hover {
         min-height: 250px;
         width: 100%;
     }
+    
+    /* Make the profile picture narrower on mobile to avoid stretching the container */
+    .hero-profile-pic {
+        max-width: 200px; 
+    }
 
     .main-footer {
         flex-direction: column;
@@ -272,47 +297,9 @@ a:hover {
     .footer-col {
         width: 100%;
     }
-}/* === FOOTER SOSIAL LINK STYLES (ICON STYLES) === */
+}
+/* === FOOTER SOSIAL LINK STYLES (ICON STYLES) === */
 
 .footer-col.social-links a {
     /* Linklər yan-yana olsun və ikonla yazı bir yerdə düzülsün */
-    display: flex; 
-    align-items: center;
-    margin-bottom: 15px; /* Aralarındakı məsafə */
-    width: 100%;
-}
-
-.footer-col.social-links a i {
-    /* İkonun özü (Font Awesome) */
-    font-size: 1.8em; /* İkon ölçüsü (fa-2x-ə bənzər) */
-    margin-right: 10px; /* İkon ilə yazı arasındakı məsafə */
-}
-
-/* İkonun altında görünən link yazısını gizlətmək və ya stil vermək */
-.footer-col.social-links a .icon-label {
-    display: inline-block;
-    font-size: 1em;
-}
-
-/* GitHub üçün xüsusi rəng */
-.fa-github {
-    color: #f7f7f7; /* İkonun default rəngi */
-    transition: color 0.3s;
-}
-
-.footer-col.social-links a:hover .fa-github {
-    color: #181717; /* Hover zamanı qara (GitHub rəngi) */
-    background-color: white; /* Arxa fon əlavə etdim */
-    border-radius: 50%;
-    padding: 2px;
-}
-
-/* Codecademy/Təhsil İkonu üçün xüsusi rəng */
-.fa-graduation-cap {
-    color: #f7f7f7;
-    transition: color 0.3s;
-}
-
-.footer-col.social-links a:hover .fa-graduation-cap {
-    color: var(--accent-color); /* Hover zamanı vurğu rəngi */
-}
+    display: flex;}
